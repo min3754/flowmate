@@ -1,0 +1,26 @@
+{
+  "name": "@flowmate/orchestrator",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "FLOWMATE_DEV=true tsx src/index.ts",
+    "dev:cli": "FLOWMATE_DEV=true tsx src/dev-cli.ts"
+  },
+  "dependencies": {
+    "@slack/bolt": "^4.1.0",
+    "yaml": "^2.7.1",
+    "zod": "^4.0.0",
+    "pino": "^9.6.0",
+    "dotenv": "^16.4.7",
+    "@flowmate/shared": "*",
+    "@flowmate/db": "*"
+  },
+  "devDependencies": {
+    "pino-pretty": "^13.0.0",
+    "tsx": "^4.19.3",
+    "@types/node": "^22.13.5"
+  }
+}

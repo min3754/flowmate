@@ -1,0 +1,13 @@
+node_modules/
+.git/
+.env
+*.db
+*.db-journal
+data/
+logs/
+.claude/
+docs/
+*.tsbuildinfo
+config/flowmate.yaml
+config/launchd/
+.DS_Store

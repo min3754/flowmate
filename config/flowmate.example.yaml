@@ -1,0 +1,45 @@
+model: haiku                    # sonnet, opus, haiku or full model ID
+timezone: UTC                   # IANA timezone for daily budget boundaries (e.g. Asia/Seoul)
+
+database:
+  path: /path/to/your/workspace/data/flowmate.db
+
+docker:
+  command: podman                 # podman, docker, or nerdctl
+  runnerImage: flowmate-runner:latest
+  memoryLimit: 4294967296        # 4GB
+  cpuLimit: 2000000000           # 2 CPU cores
+
+allowedDirectories:
+  - /path/to/your/workspace
+
+defaultWorkingDirectory: /path/to/your/workspace
+
+limits:
+  maxBudgetPerTask: 2.00         # USD
+  maxTurnsPerTask: 100
+  taskTimeoutMs: 600000          # 10min
+  dailyBudgetLimit: 50.00        # USD
+  maxHistoryMessages: 20         # conversation messages to include in context
+
+# tools:                         # Agent SDK tools (omit to allow all)
+#   - Read
+#   - Edit
+#   - Write
+#   - Bash
+#   - Glob
+#   - Grep
+#   - Task
+#   - WebSearch
+#   - WebFetch
+
+skills:
+  enabled: true
+
+mcpServers:
+  filesystem:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/your/workspace"]
+  github:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]

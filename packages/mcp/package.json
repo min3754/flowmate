@@ -1,0 +1,20 @@
+{
+  "name": "@flowmate/mcp",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@flowmate/shared": "*",
+    "@modelcontextprotocol/sdk": "^1.27.0",
+    "better-sqlite3": "^11.9.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.13.5"
+  }
+}
